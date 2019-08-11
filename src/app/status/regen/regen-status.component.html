@@ -1,0 +1,13 @@
+<mat-list>
+  <mat-list-item *ngFor="let endpoint of objectKeys(current)">
+    {{endpoint}} endpoint is {{current[endpoint].status}}
+    <div fxFlex></div>
+    <mat-icon>{{current[endpoint].logo}}</mat-icon>
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+<div class="fab-btn-container">
+  <button (click)="updateStatus()" color="accent" mat-icon-button>
+    <mat-icon style="font-size: 2.3rem; width: 2.3rem; height: 2.3rem;">autorenew</mat-icon>
+  </button>
+</div>

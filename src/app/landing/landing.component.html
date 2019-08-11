@@ -1,0 +1,22 @@
+<div  fxLayout="column"
+      fxLayoutGap="5px"  
+      fxLayoutGap.gt-md="20px" 
+      fxLayoutAlign="center left"
+      fxFlexOffset="15px">
+  <div fxLayout="column" fxFlexOffset="10px">
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Enter url">
+      </mat-form-field>
+      <button (click)="onButtonClick()" mat-stroked-button color="primary">Get It!</button>
+    </form>          
+  </div>
+  <div fxLayout="column" fxFlexOffset="10px">
+    <h3>Editor</h3>
+    <ace-editor [(text)]="code" mode="json" style="width:90vw; height:400px;"></ace-editor>  
+  </div>
+  <div fxLayout="column" fxFlexOffset="10px">
+    <h3>Visualizer</h3>
+    <ngx-json-viewer [json]="data"></ngx-json-viewer>
+  </div>  
+</div>
