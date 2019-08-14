@@ -51,7 +51,11 @@ export class RegenStatusComponent implements OnInit {
       this.httpClient.get(regenEndpoints[endpoint])
       .subscribe(
         (res: any) => {
-          this.current[endpoint] = { status: 'up', logo: 'check' };
+          if (res === null) {
+            this.current[endpoint] = { status: 'down', logo: 'error' };
+          } else {
+            this.current[endpoint] = { status: 'up', logo: 'check' };
+          }
         },
         (error) => {
           this.current[endpoint] = { status: 'down', logo: 'error' };
